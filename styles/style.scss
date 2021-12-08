@@ -1,0 +1,239 @@
+// variables
+$font-stack: "Press Start 2P", cursive;
+// end of variables
+
+// global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: $font-stack;
+}
+button {
+  font-family: $font-stack;
+}
+p {
+  font-size: 2rem;
+}
+// end of global styles
+
+// tv box border
+.tv-box-desktop {
+  background-image: url("../assets/tvborder.png");
+  background-size: 100% 100%;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+}
+
+.main-content {
+  background: url("../assets/tvbg.gif");
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-o-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-moz-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.animate-flicker {
+  -webkit-animation: flickerAnimation 0.5s infinite;
+  -moz-animation: flickerAnimation 0.5s infinite;
+  -o-animation: flickerAnimation 0.5s infinite;
+  animation: flickerAnimation 0.5s infinite;
+}
+
+.flex-container {
+  height: 100vh;
+  width: 100vw;
+  z-index: 5;
+  display: flex;
+  .gallery {
+    height: 100vh;
+    width: 40vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "rockyGif firstGif firstGif"
+      ". secondGif secondGif"
+      "rockygi2 thirdGif thirdGif";
+  }
+  .firstGif {
+    grid-area: firstGif;
+    background: url("../assets/ezgif.com-gif-maker.gif");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+  .rockyGif {
+    grid-area: rockyGif;
+    background: url("../assets/rocky2.gif");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+  .secondGif {
+    grid-area: secondGif;
+    background: url("../assets/rocky.gif");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+  .thirdGif {
+    grid-area: thirdGif;
+    background: url("../assets/awgebg.gif");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+  .rockygi2 {
+    grid-area: rockygi2;
+    background: url("../assets/ririrocky.gif");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
+
+  #newsletter {
+    min-height: 100vh;
+    width: 60vw;
+    background: linear-gradient(rgba(0, 102, 255, 0.5), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-wrapper {
+    background: rgba(0, 102, 255, 0.8);
+    width: 70%;
+    color: white;
+    border-radius: 20px;
+  }
+  .form-head {
+    text-align: center;
+    padding: 4rem;
+  }
+  .name-form,
+  .email-form {
+    padding: 2rem;
+    text-align: center;
+    align-items: center;
+  }
+  .form-wrapper label {
+    margin: 0rem 2rem;
+  }
+  .form-wrapper button {
+    width: 100%;
+    padding: 2rem;
+    margin-top: 8rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    animation:flickerAnimation 0.45s infinite;
+  }
+  .form-wrapper input {
+    padding: 1rem 3rem;
+  }
+}
+
+// 320px — 480px: Mobile devices
+// 481px — 768px: iPads, Tablets
+// 769px — 1024px: Small screens, laptops
+// 1025px — 1200px: Desktops, large screens
+// 1201px and more —  Extra large screens, TV
+
+@media (max-width:540px){
+    .tv-box-desktop{
+        background-image: url("../assets/tvbordermobile.png");
+    }
+    .flex-container{
+        flex-wrap:wrap;
+        overflow:scroll;
+    }
+    .gallery{
+        flex:1 1 40rem;
+        order:2;
+    }
+    #newsletter{
+        order:1;
+        flex: 1 1 40rem;
+    }
+}
+@media (max-width:375px){
+    .tv-box-desktop{
+        background-image: url("../assets/tvbordermobile.png");
+    }
+    .flex-container{
+        flex-wrap:wrap;
+        overflow:scroll;
+
+        .form-wrapper input{
+            padding: 1rem 0.5rem;
+        }
+    }
+    .gallery{
+        flex:1 1 40rem;
+        order:2;
+    }
+    #newsletter{
+        order:1;
+        flex: 1 1 40rem;
+    }
+}
