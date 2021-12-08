@@ -47,7 +47,6 @@ p {
   background-size: cover;
 }
 
-
 @keyframes flickerAnimation {
   0% {
     opacity: 1;
@@ -186,7 +185,7 @@ p {
     margin-top: 8rem;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    animation:flickerAnimation 0.45s infinite;
+    animation: flickerAnimation 0.45s infinite;
   }
   .form-wrapper input {
     padding: 1rem 3rem;
@@ -199,41 +198,41 @@ p {
 // 1025px — 1200px: Desktops, large screens
 // 1201px and more —  Extra large screens, TV
 
-@media (max-width:540px){
-    .tv-box-desktop{
-        background-image: url("../assets/tvbordermobile.png");
-    }
-    .flex-container{
-        flex-wrap:wrap;
-        overflow:scroll;
-    }
-    .gallery{
-        flex:1 1 40rem;
-        order:2;
-    }
-    #newsletter{
-        order:1;
-        flex: 1 1 40rem;
-    }
+@media (max-width: 540px) {
+  .tv-box-desktop {
+    background-image: url("../assets/tvbordermobile.png");
+  }
+  .flex-container {
+    flex-wrap: wrap;
+    overflow: scroll;
+  }
+  .gallery {
+    flex: 1 1 40rem;
+    order: 2;
+  }
+  #newsletter {
+    order: 1;
+    flex: 1 1 40rem;
+  }
 }
-@media (max-width:375px){
-    .tv-box-desktop{
-        background-image: url("../assets/tvbordermobile.png");
-    }
-    .flex-container{
-        flex-wrap:wrap;
-        overflow:scroll;
+@media (max-width: 375px) {
+  .tv-box-desktop {
+    background-image: url("../assets/tvbordermobile.png");
+  }
+  .flex-container {
+    flex-wrap: wrap;
+    overflow: scroll;
 
-        .form-wrapper input{
-            padding: 1rem 0.5rem;
-        }
+    .form-wrapper input {
+      padding: 1rem 0.5rem;
     }
-    .gallery{
-        flex:1 1 40rem;
-        order:2;
-    }
-    #newsletter{
-        order:1;
-        flex: 1 1 40rem;
-    }
+  }
+  .gallery {
+    flex: 1 1 40rem;
+    order: 2;
+  }
+  #newsletter {
+    order: 1;
+    flex: 1 1 40rem;
+  }
 }
